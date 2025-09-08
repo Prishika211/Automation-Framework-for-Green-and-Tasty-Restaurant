@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "feedbacks": {
+          "type": "object",
+          "properties": {
+            "totalPages": { "type": "integer" },
+            "totalElements": { "type": "integer" },
+            "size": { "type": "integer" },
+            "number": { "type": "integer" },
+            "first": { "type": "boolean" },
+            "last": { "type": "boolean" },
+            "numberOfElements": { "type": "integer" },
+            "empty": { "type": "boolean" },
+            "content": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string", "format": "uuid" },
+                  "rate": { "type": "string" },
+                  "comment": { "type": "string" },
+                  "userName": { "type": "string" },
+                  "userAvatarUrl": { "type": ["string", "null"] },
+                  "date": { "type": "string", "format": "date-time" },
+                  "type": { "type": "string" },
+                  "locationId": { "type": "string" }
+                },
+                "required": ["id", "rate", "comment", "userName", "date", "type", "locationId"]
+              }
+            },
+            "pageable": {
+              "type": "object",
+              "properties": {
+                "paged": { "type": "boolean" },
+                "pageNumber": { "type": "integer" },
+                "offset": { "type": "integer" },
+                "pageSize": { "type": "integer" },
+                "unpaged": { "type": "boolean" },
+                "sort": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nullHandling": { "type": "string" },
+                      "ignoreCase": { "type": "boolean" },
+                      "property": { "type": "string" },
+                      "ascending": { "type": "boolean" },
+                      "direction": { "type": "string" }
+                    },
+                    "required": ["nullHandling", "ignoreCase", "property", "ascending", "direction"]
+                  }
+                }
+              },
+              "required": ["paged", "pageNumber", "offset", "pageSize", "unpaged", "sort"]
+            },
+            "sort": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nullHandling": { "type": "string" },
+                  "ignoreCase": { "type": "boolean" },
+                  "property": { "type": "string" },
+                  "ascending": { "type": "boolean" },
+                  "direction": { "type": "string" }
+                },
+                "required": ["nullHandling", "ignoreCase", "property", "ascending", "direction"]
+              }
+            }
+          },
+          "required": ["totalPages", "totalElements", "size", "content", "number", "first", "last", "numberOfElements", "empty"]
+        }
+      },
+      "required": ["feedbacks"]
+    }
+  },
+  "required": ["data"]
+}

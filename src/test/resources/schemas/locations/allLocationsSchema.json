@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "address": { "type": "string" },
+              "description": { "type": "string" },
+              "totalCapacity": { "type": "string" },
+              "averageOccupancy": { "type": "string" },
+              "imageUrl": { "type": "string" },
+              "rating": { "type": "string" }
+            },
+            "required": [
+              "id",
+              "address",
+              "description",
+              "totalCapacity",
+              "averageOccupancy",
+              "imageUrl",
+              "rating"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["locations"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["data"],
+  "additionalProperties": false
+}

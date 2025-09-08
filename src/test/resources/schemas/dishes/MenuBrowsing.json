@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "dishes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "price",
+              "weight",
+              "imageUrl",
+              "description",
+              "calories",
+              "protein",
+              "carbohydrates",
+              "fats",
+              "vitamins"
+            ],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "price": { "type": "string" },
+              "weight": { "type": "string" },
+              "imageUrl": { "type": "string" },
+              "isPopular": { "type": "boolean" },
+              "isSpecial": { "type": "boolean" },
+              "locationId": { "type": "string" },
+              "description": { "type": "string" },
+              "calories": { "type": "string" },
+              "protein": { "type": "string" },
+              "fats": { "type": "string" },
+              "carbohydrates": { "type": "string" },
+              "vitamins": { "type": "string" },
+              "special": { "type": "boolean" },
+              "popular": { "type": "boolean" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

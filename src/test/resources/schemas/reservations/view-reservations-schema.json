@@ -1,0 +1,36 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "date",
+      "guestNumber",
+      "locationId",
+      "status",
+      "tableNumber",
+      "timeFrom",
+      "timeTo",
+      "userId",
+      "waiterId",
+      "createdByWaiter"
+    ],
+    "properties": {
+      "clientType": { "type": ["string", "null"] },
+      "id": { "type": "string", "format": "uuid" },
+      "date": { "type": "string", "format": "date" },
+      "guestNumber": { "type": "integer" },
+      "locationId": { "type": "string" },
+      "status": { "type": "string" },
+      "tableNumber": { "type": "string" },
+      "timeFrom": { "type": "string", "pattern": "^\\d{2}:\\d{2}$" },
+      "timeTo": { "type": "string", "pattern": "^\\d{2}:\\d{2}$" },
+      "userId": { "type": "string", "format": "uuid" },
+      "waiterId": { "type": "string", "format": "uuid" },
+      "email": { "type": ["string", "null"], "format": "email" },
+      "createdByWaiter": { "type": "boolean" },
+      "userInfo": { "type": ["object", "null"] },
+      "customerEmail": { "type": ["string", "null"], "format": "email" }
+    }
+  }
+}
